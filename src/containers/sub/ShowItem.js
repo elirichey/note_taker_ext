@@ -6,7 +6,7 @@ export default class ShowItem extends Component {
   render() {
     return (
       <div>
-        <h1>ShowItem</h1>
+        <h5>ShowItem</h5>
         <p>This is the individual item component.</p>
       </div>
     );

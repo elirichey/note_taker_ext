@@ -1,3 +1,12 @@
+/* Organized As Such:
+    - General, 
+    - Not Authed Containers,     
+    - Authed Container Header, 
+    - Authed Container Body, 
+    - Text Inputs 
+*/
+
+/* General */
 html,
 body {
   max-width: 300px;
@@ -15,6 +24,9 @@ body {
 * {
   box-sizing: border-box;
 }
+button:focus {
+  outline: none;
+}
 
 #app {
   display: flex;
@@ -24,6 +36,28 @@ body {
   height: 100vh;
 }
 
+.section-title {
+  width: 100%;
+  text-align: center;
+}
+
+/* Not Authed Containers */
+#login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+#signup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+/* Authed Container Header */
 #header {
   display: flex;
   width: 100%;
@@ -71,9 +105,65 @@ body {
   text-align: center;
 }
 
+/* Authed Container Body */
 #content-body {
   flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+/* Text Inputs */
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+.input-field label {
+  display: block;
+  font-size: 14px;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.input-field input {
+  border: solid 1px #878787;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+}
+.input-field textarea {
+  border: solid 1px #878787;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+}
+.submit-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.submit-field button {
+  background-color: #fff;
+  font-size: 14px;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #878787;
+  border: solid 2px #878787;
+  border-radius: 40px;
+  padding: 10px 40px;
+}
+.submit-field button:hover {
+  background-color: #878787;
+  color: #ffffff;
+  border: solid 2px #ffffff;
 }

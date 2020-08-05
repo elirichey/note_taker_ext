@@ -4,7 +4,7 @@ export default class ListAll extends Component {
   render() {
     return (
       <div>
-        <h1>ListAll</h1>
+        <h5>ListAll</h5>
         <p>This is the list all notes component.</p>
       </div>
     );

@@ -4,7 +4,7 @@ export default class Add extends Component {
   render() {
     return (
       <div>
-        <h1>Add</h1>
+        <h5>Add</h5>
         <p>This is the Add component.</p>
       </div>
     );
