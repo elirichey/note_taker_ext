@@ -1,7 +1,5 @@
 import { h, Component, Fragment } from "preact";
-// Components
 import Header from "../../components/header";
-// Components - Additional Screens
 import Add from "../Sub/Add";
 import ListAll from "../Sub/ListAll";
 import ShowItem from "../Sub/ShowItem";
