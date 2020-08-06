@@ -29,9 +29,11 @@
     "sirv-cli": "1.0.5"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "preact": "^10.4.7",
     "preact-render-to-string": "^5.1.4",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "redux": "^4.0.5"
   },
   "jest": {
     "preset": "jest-preset-preact",
