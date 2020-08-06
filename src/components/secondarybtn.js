@@ -1,9 +1,9 @@
 import { h } from "preact";
 
-export default function ActionBtn(props) {
+export default function SecondaryBtn(props) {
   let { action, label } = props;
   return (
-    <div class="submit-field">
+    <div class="secondary-btn">
       <button onClick={action}>{label}</button>
     </div>
   );
