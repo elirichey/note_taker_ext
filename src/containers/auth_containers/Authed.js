@@ -20,7 +20,6 @@ export default class Authed extends Component {
   };
 
   renderDisplay = (currentTab) => {
-    console.log("HOWDY VALUE: ", currentTab);
     switch (currentTab) {
       case "add":
         return <Add />;

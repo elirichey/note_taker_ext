@@ -9,7 +9,7 @@ export default class App extends Component {
 
     // This will be repalced with Redux!
     this.state = {
-      authed: false,
+      authed: !false,
     };
   }
 

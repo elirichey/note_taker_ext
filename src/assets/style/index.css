@@ -27,6 +27,12 @@ body {
 button:focus {
   outline: none;
 }
+input:focus {
+  outline-color: #086dd1;
+}
+textarea:focus {
+  outline-color: #086dd1;
+}
 
 #app {
   display: flex;
@@ -73,6 +79,9 @@ button:focus {
 }
 .mb-30 {
   margin-bottom: 30px;
+}
+.p-15 {
+  padding: 15px;
 }
 
 /* Not Authed Containers */
@@ -156,11 +165,23 @@ button:focus {
 #content-body {
   flex: 1;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: calc(100vh - 50px);
+  overflow: scroll;
 }
 
 /* Text Inputs */
+.content-container {
+  width: 100%;
+}
+.sub-section-title {
+  font-size: 21px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 .input-field {
   display: flex;
   flex-direction: column;
@@ -208,7 +229,7 @@ button:focus {
   padding: 10px 40px;
 }
 .submit-field button:hover {
-  background-color: #878787;
+  background-color: #1161b0;
   color: #ffffff;
   border: solid 2px #ffffff;
 }

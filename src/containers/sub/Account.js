@@ -1,12 +1,12 @@
-import { h, Component } from "preact";
+import { h, Component, Fragment } from "preact";
 
 export default class Account extends Component {
   render() {
     return (
-      <div>
-        <h5>Account</h5>
+      <Fragment>
+        <h5 class="sub-section-title">Account</h5>
         <p>This is the Account component.</p>
-      </div>
+      </Fragment>
     );
   }
 }
