@@ -38,7 +38,6 @@ export default class SignUp extends Component {
 
   render() {
     let { name_first, name_last, email, password, password2 } = this.state;
-    console.log("CLOSE WORKS ", () => this.props.close());
 
     return (
       <Fragment>

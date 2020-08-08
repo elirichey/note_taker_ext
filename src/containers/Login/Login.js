@@ -27,10 +27,6 @@ export default class Login extends Component {
 
   render() {
     let { email, password } = this.state;
-    console.log("GOT PROPS", this.props.close);
-
-    // setTimeout(() => { this.props.close; }, 250);
-
     return (
       <Fragment>
         <div id="login">
