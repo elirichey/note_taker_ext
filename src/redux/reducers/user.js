@@ -4,7 +4,10 @@ import {
   FAIL_USER_UPDATE,
   LOAD_USER_NOTES,
   ADD_USER_NOTE,
+  EDIT_USER_NOTE,
   REMOVE_USER_NOTE,
+  VIEW_USER_NOTE,
+  CLEAR_VIEW_USER_NOTE,
   RESET_AUTH,
 } from "../actions/user";
 
@@ -12,11 +15,13 @@ const initialState = {
   isFetching: false,
   profile: null,
   listNotes: [],
+  viewNote: null,
   error: null,
 };
 
 export default function user(state = initialState, action) {
   switch (action.type) {
+    // Profile
     case FETCH_USER_UPDATE:
       return {
         ...state,
@@ -36,6 +41,7 @@ export default function user(state = initialState, action) {
         error: action.data,
       };
 
+    // Notes
     case LOAD_USER_NOTES:
       return {
         ...state,
@@ -44,19 +50,62 @@ export default function user(state = initialState, action) {
         error: null,
       };
     case ADD_USER_NOTE:
-      // let add_notes = [];
+      let add_notes = [...state.listNotes];
+      add_notes.push(action.data);
       return {
         ...state,
         isFetching: false,
-        // listNotes: add_notes,
+        listNotes: add_notes,
+        error: null,
+      };
+    case EDIT_USER_NOTE:
+      let edit_notes = [];
+      let check_notes = [...state.listNotes];
+
+      check_notes.map((item) => {
+        // These should really be id's
+        if (item.title !== action.data.title) {
+          edit_notes.push(item);
+        }
+      });
+
+      edit_notes.push(action.data);
+
+      return {
+        ...state,
+        isFetching: false,
+        listNotes: edit_notes,
+        viewNote: action.data,
         error: null,
       };
     case REMOVE_USER_NOTE:
-      // let remove_notes = [];
+      let new_notes = [];
+      let remove_notes = [...state.listNotes];
+
+      remove_notes.map((item) => {
+        if (item !== action.data) {
+          new_notes.push(item);
+        }
+      });
+
       return {
         ...state,
         isFetching: false,
-        // listNotes: remove_notes,
+        listNotes: new_notes,
+        error: null,
+      };
+    case VIEW_USER_NOTE:
+      return {
+        ...state,
+        isFetching: false,
+        viewNote: action.data,
+        error: null,
+      };
+    case CLEAR_VIEW_USER_NOTE:
+      return {
+        ...state,
+        isFetching: false,
+        viewNote: null,
         error: null,
       };
     case RESET_AUTH:

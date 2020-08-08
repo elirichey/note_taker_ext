@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SecondaryBtn from "../../components/secondarybtn";
-import NoteForm from "../../components/noteform";
+import SecondaryBtn from "../../components/SecondaryBtn";
+import NoteForm from "../../components/NoteForm";
 
 export default class Add extends Component {
   constructor(props) {
@@ -22,10 +22,24 @@ export default class Add extends Component {
 
   trySubmit = () => {
     let { title, url, excerpt, notes } = this.state;
-    console.log("Title: ", title);
-    console.log("Url: ", url);
-    console.log("Excerpt: ", excerpt);
-    console.log("Notes: ", notes);
+
+    if (title === "") {
+      return alert("Please Add Title");
+    }
+    if (excerpt === "" && notes === "") {
+      return alert("Please add an Excerpt, Note, or both");
+    }
+
+    let data = {
+      title,
+      url,
+      excerpt,
+      notes,
+    };
+
+    console.log("Data Submitted: ", data);
+    this.props.addUserNote(data);
+    this.clearInputs();
   };
 
   clearInputs = () => {

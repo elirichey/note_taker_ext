@@ -1,50 +1,38 @@
 import React, { Component } from "react";
-import Header from "../components/header";
-import Add from "../containers/Add/Add";
-import ListAll from "../containers/ListAll/ListAll";
-import ShowItem from "../containers/ShowItem/ShowItem";
-import Account from "../containers/Account/Account";
+import Header from "../components/Header";
+import HeaderBack from "../components/HeaderBack";
+import AddContainer from "../containers/Add/AddContainer";
+import ListAllContainer from "../containers/ListAll/ListAllContainer";
+import ShowItemContainer from "../containers/ShowItem/ShowItemContainer";
+import AccountContainer from "../containers/Account/AccountContainer";
 
 export default class Authed extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentTab: "add",
-    };
-  }
-
-  updateDisplay = (view) => {
-    this.setState({
-      currentTab: view,
-    });
-  };
-
-  renderDisplay = (currentTab) => {
-    switch (currentTab) {
+  renderDisplay = (navRoot) => {
+    switch (navRoot) {
       case "add":
-        return <Add />;
+        return <AddContainer />;
       case "list":
-        return <ListAll />;
+        return <ListAllContainer />;
       case "show":
-        return <ShowItem />;
+        return <ShowItemContainer updateNav={this.props.updateNav} />;
       case "account":
-        return <Account user="me" />;
+        return <AccountContainer user="me" />;
       default:
         return "Error";
     }
   };
 
   render() {
+    let { navRoot, updateNav } = this.props;
     return (
       <div id="app">
-        <Header
-          updateDisplay={this.updateDisplay}
-          currentTab={this.state.currentTab}
-        />
+        {navRoot === "show" ? (
+          <HeaderBack updateDisplay={updateNav} />
+        ) : (
+          <Header updateDisplay={updateNav} currentTab={navRoot} />
+        )}
 
-        <section id="content-body">
-          {this.renderDisplay(this.state.currentTab)}
-        </section>
+        <section id="content-body">{this.renderDisplay(navRoot)}</section>
       </div>
     );
   }

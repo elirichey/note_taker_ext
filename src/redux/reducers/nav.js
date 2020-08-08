@@ -2,7 +2,7 @@ import { TOGGLE_SIDEBAR, UPDATE_NAV, RESET_NAV } from "../actions/nav";
 
 const initialState = {
   show_sidebar: false,
-  navRoot: "Add",
+  navRoot: "add",
 };
 
 export default function navigation(state = initialState, action) {

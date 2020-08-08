@@ -1,18 +1,13 @@
 import React, { Component } from "react";
-import SecondaryBtn from "../../components/secondarybtn";
-import NoteForm from "../../components/noteform";
+import SecondaryBtn from "../../components/SecondaryBtn";
+import NoteForm from "../../components/NoteForm";
+import ShowItemControls from "../../components/ShowItemControls";
 
 export default class ShowItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isEditing: false,
-      // Original Text
-      ogTitle: "",
-      ogUrl: "",
-      ogExcerpt: "",
-      ogNotes: "",
-      // Updated Text
       title: "",
       url: "",
       excerpt: "",
@@ -21,8 +16,17 @@ export default class ShowItem extends Component {
   }
 
   componentDidMount() {
-    console.log("Set the incoming value to state... ");
-    // this.setState({ ogTitle: "", ogUrl: "", ogExcerpt: "", ogNotes: "", title: "", url: "", excerpt: "", notes: "", });
+    let { title, url, excerpt, notes } = this.props.viewNote;
+    this.setState({
+      title,
+      url,
+      excerpt,
+      notes,
+    });
+  }
+
+  componentWillUnmount() {
+    this.props.clearViewUserNote();
   }
 
   toggleEdit = () => {
@@ -30,6 +34,7 @@ export default class ShowItem extends Component {
     this.setState({
       isEditing: !isEditing,
     });
+    this.revertText();
   };
 
   updateField = (e) => {
@@ -40,19 +45,39 @@ export default class ShowItem extends Component {
 
   trySubmit = () => {
     let { title, url, excerpt, notes } = this.state;
-    console.log("Title: ", title);
-    console.log("Url: ", url);
-    console.log("Excerpt: ", excerpt);
-    console.log("Notes: ", notes);
+    if (title === "") {
+      return alert("Please Add Title");
+    }
+    if (excerpt === "" && notes === "") {
+      return alert("Please add an Excerpt, Note, or both");
+    }
+
+    let data = {
+      title,
+      url,
+      excerpt,
+      notes,
+    };
+
+    console.log("Data Submitted: ", data);
+    this.props.viewUserNote(data);
+    this.props.editUserNote(data);
+  };
+
+  deleteItem = () => {
+    let { viewNote } = this.props;
+    this.props.updateNav("list");
+    this.props.clearViewUserNote();
+    this.props.removeUserNote(viewNote);
   };
 
   revertText = () => {
-    let { ogTitle, ogUrl, ogExcerpt, ogNotes } = this.state;
+    let { title, url, excerpt, notes } = this.props.viewNote;
     this.setState({
-      title: ogTitle,
-      url: ogUrl,
-      excerpt: ogExcerpt,
-      notes: ogNotes,
+      title,
+      url,
+      excerpt,
+      notes,
     });
   };
 
@@ -60,6 +85,12 @@ export default class ShowItem extends Component {
     let { isEditing } = this.state;
     return (
       <div className="content-container p-15">
+        <ShowItemControls
+          toggleEdit={this.toggleEdit}
+          deleteItem={this.deleteItem}
+          isEditing={isEditing}
+        />
+
         <h5 className="sub-section-title">Edit Note</h5>
 
         <NoteForm

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ActionBtn from "../../components/actionbtn";
+import ActionBtn from "../../components/ActionBtn";
 
 export default class Landing extends Component {
   render() {

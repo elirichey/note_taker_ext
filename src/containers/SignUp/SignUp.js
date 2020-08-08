@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
-import Input from "../../components/input";
-import ActionBtn from "../../components/actionbtn";
-import SecondaryBtn from "../../components/secondarybtn";
-import Back from "../../components/back";
+import Input from "../../components/Input";
+import ActionBtn from "../../components/ActionBtn";
+import SecondaryBtn from "../../components/SecondaryBtn";
+import Back from "../../components/Back";
 
 export default class SignUp extends Component {
   constructor(props) {

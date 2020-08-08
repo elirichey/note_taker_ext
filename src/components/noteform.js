@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import Input from "./input";
-import TextArea from "./textarea";
-import ActionBtn from "./actionbtn";
+import Input from "./Input";
+import TextArea from "./TextArea";
+import ActionBtn from "./ActionBtn";
 
 export default function NoteForm(props) {
   let { title, url, excerpt, notes, isEditing } = props.state;
@@ -9,11 +9,11 @@ export default function NoteForm(props) {
 
   return (
     <Fragment>
-      <Input
+      <TextArea
         name="title"
         value={title}
         label="Title"
-        type="text"
+        rows="1"
         isEditing={isEditing}
         onChange={updateField}
       />
@@ -45,7 +45,7 @@ export default function NoteForm(props) {
         onChange={updateField}
       />
 
-      {isEditing ? (
+      {isEditing && title !== "" && (excerpt !== "" || notes !== "") ? (
         <div className="d-block mt-30 mb-15">
           <ActionBtn action={trySubmit} label="Save" />
         </div>
