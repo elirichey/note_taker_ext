@@ -1,44 +1,47 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 
 const Header = ({ updateDisplay, currentTab }) => (
   <header id="header">
     <nav>
       <div
         onClick={() => updateDisplay("add")}
-        class={currentTab === "add" ? "header-btn-active" : "header-btn"}
+        className={currentTab === "add" ? "header-btn-active" : "header-btn"}
       >
         <div
-          class={
+          className={
             currentTab === "add" ? "img-container-active" : "img-container"
           }
         >
-          <img src="../assets/svg/add-white.svg" alt="add-icon" />
+          <ReactSVG src="/svg/add-white.svg" />
         </div>
       </div>
 
       <div
         onClick={() => updateDisplay("list")}
-        class={currentTab === "list" ? "header-btn-active" : "header-btn"}
+        className={currentTab === "list" ? "header-btn-active" : "header-btn"}
       >
         <div
-          class={
+          className={
             currentTab === "list" ? "img-container-active" : "img-container"
           }
         >
-          <img src="../assets/svg/list-white.svg" alt="list-notes-icon" />
+          <ReactSVG src="/svg/list-white.svg" />
         </div>
       </div>
 
       <div
         onClick={() => updateDisplay("account")}
-        class={currentTab === "account" ? "header-btn-active" : "header-btn"}
+        className={
+          currentTab === "account" ? "header-btn-active" : "header-btn"
+        }
       >
         <div
-          class={
+          className={
             currentTab === "account" ? "img-container-active" : "img-container"
           }
         >
-          <img src="../assets/svg/account-white.svg" alt="account-icon" />
+          <ReactSVG src="/svg/account-white.svg" />
         </div>
       </div>
     </nav>

@@ -21,7 +21,8 @@ export default class Login extends Component {
 
   trySubmit = () => {
     let { email, password } = this.state;
-    console.log("State: ", this.state);
+    console.log("Email: ", email);
+    console.log("Password: ", password);
   };
 
   render() {
@@ -33,28 +34,28 @@ export default class Login extends Component {
     return (
       <Fragment>
         <div id="login">
-          <h3 class="section-title">Login</h3>
+          <h3 className="section-title">Login</h3>
 
           <Input
             name="email"
             value={email}
             label="Email"
             type="email"
-            onInput={this.updateField}
+            onChange={this.updateField}
           />
           <Input
             name="password"
             value={password}
             label="Password"
             type="password"
-            onInput={this.updateField}
+            onChange={this.updateField}
           />
 
-          <div class="d-block mt-30 mb-15">
+          <div className="d-block mt-30 mb-15">
             <ActionBtn action={this.trySubmit} label="Submit" />
           </div>
 
-          <div class="d-block mb-30 mt-15">
+          <div className="d-block mb-30 mt-15">
             <SecondaryBtn
               action={() => this.props.showSignUp()}
               label="Sign Up"

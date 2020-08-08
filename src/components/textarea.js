@@ -1,19 +1,19 @@
 import React from "react";
 
 export default function TextArea(props) {
-  let { name, value, label, rows, onInput, isEditing } = props;
+  let { name, value, label, rows, onChange, isEditing } = props;
 
   return (
-    <div class="input-field">
+    <div className="input-field">
       <label>{label}</label>
       <textarea
         name={name}
         value={value}
         placeholder={label}
         rows={rows}
-        onInput={onInput}
+        onChange={onChange}
         readOnly={!isEditing}
-        class={!isEditing ? "readonly" : null}
+        className={!isEditing ? "readonly" : null}
       />
     </div>
   );

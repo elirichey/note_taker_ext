@@ -59,8 +59,8 @@ export default class ShowItem extends Component {
   render() {
     let { isEditing } = this.state;
     return (
-      <div class="content-container p-15">
-        <h5 class="sub-section-title">Edit Note</h5>
+      <div className="content-container p-15">
+        <h5 className="sub-section-title">Edit Note</h5>
 
         <NoteForm
           state={this.state}
@@ -69,7 +69,7 @@ export default class ShowItem extends Component {
         />
 
         {isEditing ? (
-          <div class="d-block mb-30 mt-15">
+          <div className="d-block mb-30 mt-15">
             <SecondaryBtn action={this.revertText} label="Cancel Updates" />
           </div>
         ) : null}

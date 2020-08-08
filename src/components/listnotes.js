@@ -3,7 +3,7 @@ import ListItem from "./listitem";
 
 export default function ListNotes(props) {
   return (
-    <div class="list-container">
+    <div className="list-container">
       <ul id="list-notes">
         <ListItem />
       </ul>

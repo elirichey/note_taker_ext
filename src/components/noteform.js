@@ -15,7 +15,7 @@ export default function NoteForm(props) {
         label="Title"
         type="text"
         isEditing={isEditing}
-        onInput={updateField}
+        onChange={updateField}
       />
 
       <Input
@@ -24,7 +24,7 @@ export default function NoteForm(props) {
         label="URL"
         type="text"
         isEditing={isEditing}
-        onInput={updateField}
+        onChange={updateField}
       />
 
       <TextArea
@@ -33,7 +33,7 @@ export default function NoteForm(props) {
         label="Excerpt Text"
         rows="10"
         isEditing={isEditing}
-        onInput={updateField}
+        onChange={updateField}
       />
 
       <TextArea
@@ -42,11 +42,11 @@ export default function NoteForm(props) {
         label="Notes"
         rows="10"
         isEditing={isEditing}
-        onInput={updateField}
+        onChange={updateField}
       />
 
       {isEditing ? (
-        <div class="d-block mt-30 mb-15">
+        <div className="d-block mt-30 mb-15">
           <ActionBtn action={trySubmit} label="Save" />
         </div>
       ) : null}

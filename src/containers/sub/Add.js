@@ -39,8 +39,8 @@ export default class Add extends Component {
 
   render() {
     return (
-      <div class="content-container p-15">
-        <h5 class="sub-section-title">New Note</h5>
+      <div className="content-container p-15">
+        <h5 className="sub-section-title">New Note</h5>
 
         <NoteForm
           state={this.state}
@@ -48,7 +48,7 @@ export default class Add extends Component {
           trySubmit={this.trySubmit}
         />
 
-        <div class="d-block mb-30 mt-15">
+        <div className="d-block mb-30 mt-15">
           <SecondaryBtn action={this.clearInputs} label="Clear" />
         </div>
       </div>

@@ -37,6 +37,10 @@ textarea:focus {
 .readonly:focus {
   outline: none;
 }
+svg {
+  width: 100%;
+  height: auto;
+}
 
 #app {
   display: flex;

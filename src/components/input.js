@@ -1,18 +1,18 @@
 import React from "react";
 
 export default function Input(props) {
-  let { name, value, label, type, onInput, isEditing } = props;
+  let { name, value, label, type, onChange, isEditing } = props;
   return (
-    <div class="input-field">
+    <div className="input-field">
       <label>{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         placeholder={label}
-        onInput={onInput}
+        onChange={onChange}
         readOnly={!isEditing}
-        class={!isEditing ? "readonly" : null}
+        className={!isEditing ? "readonly" : null}
       />
     </div>
   );
