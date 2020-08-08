@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
-import Header from "../../components/header";
-import Add from "../sub/Add";
-import ListAll from "../sub/ListAll";
-import ShowItem from "../sub/ShowItem";
-import Account from "../sub/Account";
+import React, { Component } from "react";
+import Header from "../components/header";
+import Add from "../containers/Add/Add";
+import ListAll from "../containers/ListAll/ListAll";
+import ShowItem from "../containers/ShowItem/ShowItem";
+import Account from "../containers/Account/Account";
 
 export default class Authed extends Component {
   constructor() {
@@ -36,7 +36,7 @@ export default class Authed extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div id="app">
         <Header
           updateDisplay={this.updateDisplay}
           currentTab={this.state.currentTab}
@@ -45,7 +45,7 @@ export default class Authed extends Component {
         <section id="content-body">
           {this.renderDisplay(this.state.currentTab)}
         </section>
-      </Fragment>
+      </div>
     );
   }
 }

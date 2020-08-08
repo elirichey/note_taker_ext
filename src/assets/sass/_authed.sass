@@ -1,0 +1,131 @@
+/* Header */
+#header
+  display: flex
+  width: 100%
+  height: 50px
+  padding: 0
+  background: #1161b0
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+  z-index: 50
+  nav
+    flex: 1
+    display: flex
+    height: 100%
+    align-items: center
+    justify-content: center
+  .img-container
+    max-width: 25px
+    max-height: 25px
+    opacity: 0.5
+  .img-container-active
+    max-width: 25px
+    max-height: 25px
+
+.header-btn
+  flex: 1
+  display: flex
+  height: 100%
+  align-items: center
+  justify-content: center
+  text-align: center
+.header-btn-active
+  flex: 1
+  display: flex
+  height: 100%
+  background: #086dd1
+  align-items: center
+  justify-content: center
+  text-align: center
+
+/* Main Body */  
+#content-body
+  flex: 1
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+  max-height: calc(100vh - 50px)
+  overflow: scroll
+
+.content-container
+  width: 100%
+
+.sub-section-title
+  font-size: 21px
+  text-align: center
+  margin-top: 15px
+  margin-bottom: 0
+
+/* Inputs */  
+.input-field
+  display: flex
+  flex-direction: column
+  label
+    display: block
+    font-size: 14px
+    margin-block-start: 1.67em
+    margin-block-end: 1.67em
+    margin-inline-start: 0px
+    margin-inline-end: 0px
+    font-weight: bold
+    margin-bottom: 8px
+  input
+    border: solid 1px #878787
+    padding: 8px 10px
+    font-size: 14px
+    font-family: "Helvetica Neue", arial, sans-serif
+    font-weight: 400
+    color: #444
+  textarea
+    border: solid 1px #878787
+    padding: 8px 10px
+    font-size: 14px
+    font-family: "Helvetica Neue", arial, sans-serif
+    font-weight: 400
+    color: #444
+
+/* Buttons */  
+.submit-field
+  display: flex
+  align-items: center
+  justify-content: center
+  button
+    background-color: #fff
+    font-size: 14px
+    font-family: "Helvetica Neue", arial, sans-serif
+    font-weight: bold
+    text-transform: uppercase
+    color: #878787
+    border: solid 2px #878787
+    border-radius: 40px
+    padding: 10px 40px
+    &:hover
+      background-color: #1161b0
+      color: #ffffff
+      border: solid 2px #ffffff
+
+.secondary-btn
+  display: flex
+  align-items: center
+  justify-content: center
+  button
+    font-size: 14px
+    font-family: "Helvetica Neue", arial, sans-serif
+    font-weight: bold
+    text-transform: uppercase
+    color: #878787
+    border: none
+    padding: 10px 40px
+    &:hover
+      color: #086dd1
+
+/* List Notes */
+.list-container
+  display: flex
+
+.list-notes
+  flex: 1
+
+  & li
+    width: 100%
+    height: 72px

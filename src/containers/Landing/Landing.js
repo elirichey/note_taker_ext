@@ -7,6 +7,7 @@ export default class Landing extends Component {
       <div id="landing">
         <div className="hello-user">
           <h3>Welcome to Sten</h3>
+          <p>Organize notes more efficiently</p>
         </div>
 
         <div className="d-block mt-30 mb-15">

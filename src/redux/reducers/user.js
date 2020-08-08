@@ -6,13 +6,13 @@ import {
   ADD_USER_NOTE,
   REMOVE_USER_NOTE,
   RESET_AUTH,
-} from "../actions/auth";
+} from "../actions/user";
 
 const initialState = {
   isFetching: false,
   profile: null,
-  error: null,
   listNotes: [],
+  error: null,
 };
 
 export default function user(state = initialState, action) {
@@ -44,17 +44,19 @@ export default function user(state = initialState, action) {
         error: null,
       };
     case ADD_USER_NOTE:
+      // let add_notes = [];
       return {
         ...state,
         isFetching: false,
-        // listNotes: action.data,
+        // listNotes: add_notes,
         error: null,
       };
     case REMOVE_USER_NOTE:
+      // let remove_notes = [];
       return {
         ...state,
         isFetching: false,
-        // listNotes: action.data,
+        // listNotes: remove_notes,
         error: null,
       };
     case RESET_AUTH:

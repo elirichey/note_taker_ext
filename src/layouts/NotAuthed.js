@@ -1,9 +1,9 @@
 // Need add login / sign up here
 
-import React, { Component, Fragment } from "react";
-import SignUp from "../sub/SignUp";
-import Login from "../sub/Login";
-import Landing from "../sub/Landing";
+import React, { Component } from "react";
+import SignUp from "../containers/SignUp/SignUp";
+import Login from "../containers/Login/Login";
+import Landing from "../containers/Landing/Landing";
 
 export default class NotAuthed extends Component {
   constructor() {
@@ -28,7 +28,7 @@ export default class NotAuthed extends Component {
   render() {
     let { show_login, show_signup } = this.state;
     return (
-      <Fragment>
+      <div id="app">
         {show_signup ? (
           <SignUp showLogin={this.showLogin} close={this.close} />
         ) : null}
@@ -39,7 +39,7 @@ export default class NotAuthed extends Component {
         {!show_login && !show_signup ? (
           <Landing showLogin={this.showLogin} showSignUp={this.showSignUp} />
         ) : null}
-      </Fragment>
+      </div>
     );
   }
 }
