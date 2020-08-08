@@ -1,4 +1,4 @@
-import { h, Component, Fragment } from "preact";
+import React, { Component, Fragment } from "react";
 
 export default class ListAll extends Component {
   render() {

@@ -1,4 +1,4 @@
-import { h } from "preact";
+import React from "react";
 
 export default function ActionBtn(props) {
   let { action, label } = props;

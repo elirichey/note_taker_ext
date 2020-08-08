@@ -1,9 +1,9 @@
-import { h, Component, Fragment } from "preact";
+import React, { Component, Fragment } from "react";
 import Header from "../../components/header";
-import Add from "../Sub/Add";
-import ListAll from "../Sub/ListAll";
-import ShowItem from "../Sub/ShowItem";
-import Account from "../Sub/Account";
+import Add from "../sub/Add";
+import ListAll from "../sub/ListAll";
+import ShowItem from "../sub/ShowItem";
+import Account from "../sub/Account";
 
 export default class Authed extends Component {
   constructor() {

@@ -1,6 +1,8 @@
-import { h } from "preact";
+import React from "react";
 
-export default function TextArea({ name, value, label, rows, onInput }) {
+export default function TextArea(props) {
+  let { name, value, label, rows, onInput, isEditing } = props;
+
   return (
     <div class="input-field">
       <label>{label}</label>
@@ -10,6 +12,8 @@ export default function TextArea({ name, value, label, rows, onInput }) {
         placeholder={label}
         rows={rows}
         onInput={onInput}
+        readOnly={!isEditing}
+        class={!isEditing ? "readonly" : null}
       />
     </div>
   );

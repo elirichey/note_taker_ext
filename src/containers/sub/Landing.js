@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 import ActionBtn from "../../components/actionbtn";
 
 export default class Landing extends Component {

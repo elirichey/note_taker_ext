@@ -1,4 +1,4 @@
-import { h, Component, Fragment } from "preact";
+import React, { Component, Fragment } from "react";
 import Input from "../../components/input";
 import ActionBtn from "../../components/actionbtn";
 import SecondaryBtn from "../../components/secondarybtn";

@@ -1,4 +1,4 @@
-import { h } from "preact";
+import React from "react";
 
 export default function SecondaryBtn(props) {
   let { action, label } = props;

@@ -1,6 +1,6 @@
 // Need add login / sign up here
 
-import { h, Component, Fragment } from "preact";
+import React, { Component, Fragment } from "react";
 import SignUp from "../sub/SignUp";
 import Login from "../sub/Login";
 import Landing from "../sub/Landing";

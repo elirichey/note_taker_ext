@@ -1,16 +1,15 @@
-import { h, Component } from "preact";
-import Input from "../../components/input";
-import TextArea from "../../components/textarea";
-import ActionBtn from "../../components/actionbtn";
+import React, { Component } from "react";
 import SecondaryBtn from "../../components/secondarybtn";
+import NoteForm from "../../components/noteform";
 
 export default class Add extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isEditing: true,
       title: "",
       url: "",
-      quote: "",
+      excerpt: "",
       notes: "",
     };
   }
@@ -22,60 +21,32 @@ export default class Add extends Component {
   };
 
   trySubmit = () => {
-    let { email, password } = this.state;
-    console.log("State: ", this.state);
+    let { title, url, excerpt, notes } = this.state;
+    console.log("Title: ", title);
+    console.log("Url: ", url);
+    console.log("Excerpt: ", excerpt);
+    console.log("Notes: ", notes);
   };
 
   clearInputs = () => {
     this.setState({
       title: "",
       url: "",
-      quote: "",
+      excerpt: "",
       notes: "",
     });
   };
 
   render() {
-    let { title, url, quote, notes } = this.state;
     return (
       <div class="content-container p-15">
         <h5 class="sub-section-title">New Note</h5>
 
-        <Input
-          name="title"
-          value={title}
-          label="Title"
-          type="text"
-          onInput={this.updateField}
+        <NoteForm
+          state={this.state}
+          updateField={this.updateField}
+          trySubmit={this.trySubmit}
         />
-
-        <Input
-          name="url"
-          value={url}
-          label="URL"
-          type="text"
-          onInput={this.updateField}
-        />
-
-        <TextArea
-          name="quote"
-          value={quote}
-          label="Quoted Text"
-          rows="10"
-          onInput={this.updateField}
-        />
-
-        <TextArea
-          name="notes"
-          value={notes}
-          label="Notes"
-          rows="10"
-          onInput={this.updateField}
-        />
-
-        <div class="d-block mt-30 mb-15">
-          <ActionBtn action={this.trySubmit} label="Save" />
-        </div>
 
         <div class="d-block mb-30 mt-15">
           <SecondaryBtn action={this.clearInputs} label="Clear" />

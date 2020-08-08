@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 
 import Authed from "./containers/auth_containers/Authed";
 import NotAuthed from "./containers/auth_containers/NotAuthed";
